@@ -829,10 +829,6 @@ function exportCSV(){const headers=['Pedido','Cliente','Producto','SKUs','Tipo',
 async function login(e){e.preventDefault();const u=$('loginUser').value.trim().toUpperCase(),p=$('loginPass').value;let found=await findUserInSupabase(u,p);if(!found){alert('No se pudo iniciar sesión contra Supabase. Abre F12 > Console y revisa el mensaje que empieza con Login/Supabase.');return}currentUser=found;$('loginView').classList.add('hidden');$('appView').classList.remove('hidden');$('currentUserLabel').textContent=found.username+' · '+found.profile;applyRoleVisibility();setView(firstAllowedView())} function logout(){$('appView').classList.add('hidden');$('loginView').classList.remove('hidden');currentUser=null;applyRoleVisibility()}
 function tick(){$('clockLabel').textContent=new Date().toLocaleString('es-MX',{dateStyle:'medium',timeStyle:'short'})}
 
-async function login(e){e.preventDefault();const u=$('loginUser').value.trim().toUpperCase(),p=$('loginPass').value;let found=await findUserInSupabase(u,p);if(!found){alert('No se pudo iniciar sesión contra Supabase. Abre F12 > Console y revisa el mensaje que empieza con Login/Supabase.');return}currentUser=found;$('loginView').classList.add('hidden');$('appView').classList.remove('hidden');$('currentUserLabel').textContent=found.username+' · '+found.profile;applyRoleVisibility();setView(firstAllowedView())} function logout(){$('appView').classList.add('hidden');$('loginView').classList.remove('hidden');currentUser=null;applyRoleVisibility()}
-function tick(){$('clockLabel').textContent=new Date().toLocaleString('es-MX',{dateStyle:'medium',timeStyle:'short'})}
-  
-
 function renderIndicators(){
   try{
     const body=$('historyBody');
